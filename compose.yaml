@@ -2,16 +2,14 @@ services:
 
   api:
     image: api:latest
-
     build:
-      context: ..
-      dockerfile: deployments/Dockerfile
+      dockerfile: Dockerfile
     container_name: api
     restart: unless-stopped
     ports:
       - 8080:8080
     volumes:
-      - ../cmd/api/config.yaml:/config.yaml
+      - ./cmd/api/config.yaml:/config.yaml
     environment:
       - API_ADDRESS=:8080
       - DB_URL=postgres://postgres:password@postgres:5432/postgres?sslmode=disable
@@ -21,7 +19,7 @@ services:
 
   tests:
     image: tests:latest
-    build: ../tests
+    build: tests
     container_name: tests
     restart: "no"
     entrypoint: "true"

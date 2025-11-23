@@ -4,4 +4,4 @@ COPY . /tests
 
 WORKDIR /tests
 
-ENTRYPOINT [ "go", "test", "-race", "-v", "./..." ]
+ENTRYPOINT [ "go", "test", "-race", "-v"]

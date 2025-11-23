@@ -1,11 +1,11 @@
 up:
-	docker compose -f deployments/compose.yaml up --build -d
+	docker compose up --build -d
 
 down:
-	docker compose -f deployments/compose.yaml down
+	docker compose down
 
 clean:
-	docker compose -f deployments/compose.yaml down -v
+	docker compose down -v
 
 int-test: 
 	docker run --rm --network=host tests:latest
