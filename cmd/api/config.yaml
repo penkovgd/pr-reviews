@@ -1,0 +1,5 @@
+log_level: DEBUG
+api_server:
+  address: localhost:8080
+  timeout: 5s
+db_url: postgres://postgres:password@localhost:5432/postgres?sslmode=disable
